@@ -12,7 +12,7 @@ def up():
     # Select which database to use
     db = client.test_database
     # Select which collection to use, each collection stores data of one machine
-    collection = db.sample_machine_collection
+    collection = db.localhost_states
 
     # Set up the data
     sample_machine_state = {
@@ -37,7 +37,7 @@ def down():
     # Select which database to use
     db = client.test_database
     # Select which collection to use, each collection stores data of one machine
-    collection = db.sample_machine_collection
+    collection = db.localhost_states
 
     # Remove the data having attribute seeded = True
     collection.delete_many({'seeded': True})

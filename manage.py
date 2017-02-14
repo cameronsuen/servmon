@@ -7,6 +7,7 @@ import subprocess
 
 # Enable debugging mode for development purposes
 app.config['DEBUG'] = True
+app.config['DB'] = 'test_database'
 
 manager = Manager(app)
 
@@ -22,6 +23,10 @@ def migrate():
     """Seed the MongoDB database with test data"""
     machine_data_seed.up()
 
+@manager.command
+def reset_migrate():
+    """Reset the MongoDB database migrations"""
+    machine_data_seed.down()
 
 @manager.command
 def test():
