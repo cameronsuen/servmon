@@ -17,6 +17,7 @@ def up():
     # Set up the data
     sample_machine_state = {
         'seeded': True,
+        'metric': 'harddisk',
         'used': 200,
         'total': 1000,
         'partitions': [{'filesystem': '/dev/sda1', 'mountpoint': '/',

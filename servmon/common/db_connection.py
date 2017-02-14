@@ -6,7 +6,8 @@ http://flask.pocoo.org/docs/0.12/appcontext/#creating-an-application-context
 """
 
 from flask import g
-from pymongo import MongoClient, ConnectionFailure
+from pymongo import MongoClient
+from pymongo.errors import ConnectionFailure
 
 from servmon import app
 
@@ -37,3 +38,5 @@ def connect_to_client():
         # Prints an error message in case MongoClient connection fails
         # TODO: Add robus error message and actions
         print('Server Not Available')
+
+    return client
