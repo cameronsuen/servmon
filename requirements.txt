@@ -6,16 +6,17 @@ Flask==0.12
 Flask-Script==2.0.5
 imagesize==0.7.1
 itsdangerous==0.24
-Jinja2==2.9.4
+Jinja2==2.9.5
 MarkupSafe==0.23
 py==1.4.32
-Pygments==2.1.3
-pytest==3.0.5
+Pygments==2.2.0
+pymongo==3.4.0
+pytest==3.0.6
 pytz==2016.10
-requests==2.12.4
--e git+https://github.com/hpsuenaa/servmon.git@85d4e5bc01aa85bbe5a3d76036e9f76983d962cf#egg=Servmon
+requests==2.13.0
+-e git+https://github.com/hpsuenaa/servmon.git@460d7c3d69f749c32c9701f9b08dc119a3182186#egg=Servmon
 six==1.10.0
 snowballstemmer==1.2.1
-Sphinx==1.5.1
+Sphinx==1.5.2
 sphinxcontrib-httpdomain==1.5.0
 Werkzeug==0.11.15
