@@ -27,7 +27,7 @@ def show_harddisk_usage(hostname):
         **Example request**
         .. sourcecode:: http
 
-           GET /localhost/harddisk
+           GET /api/localhost/harddisk
            Host: localhost:5000
            Accept: application/json
 
