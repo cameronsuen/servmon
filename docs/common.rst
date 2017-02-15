@@ -1,6 +1,11 @@
 common package
 ==============
 
+.. automodule:: common
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Subpackages
 -----------
 
@@ -11,8 +16,16 @@ Subpackages
 Submodules
 ----------
 
+common.db_connection module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. automodule:: common.db_connection
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 common.invalid_usage module
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: common.invalid_usage
     :members:
@@ -20,18 +33,10 @@ common.invalid_usage module
     :show-inheritance:
 
 common.today module
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: common.today
     :members:
     :undoc-members:
     :show-inheritance:
 
-
-Module contents
----------------
-
-.. automodule:: common
-    :members:
-    :undoc-members:
-    :show-inheritance:

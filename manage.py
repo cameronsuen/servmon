@@ -11,6 +11,14 @@ app.config['DB'] = 'test_database'
 
 manager = Manager(app)
 
+@manager.command
+def makerst():
+    """Generate rst files (may not be properly formatted) for APIs and common utils in docs folder
+
+    DO NOT RUN THIS PROCESS UNLESS ABSOLUTELY NECESSARY
+    IT WILL OVERWRITE CHANGES MADE TO RST FILES
+    """
+    subprocess.run(['make', '-C', 'docs', 'rst'])
 
 @manager.command
 def makedoc():

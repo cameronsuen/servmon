@@ -22,16 +22,18 @@ from servmon.common.errorhandler import invalid_usage_handler
 
 @api_blueprint.route('/<hostname>/harddisk')
 def show_harddisk_usage(hostname):
-    """ Get the latest harddisk usage of a machine with particular `hostname`
+    """Get the latest harddisk usage of a machine with particular `hostname`
 
-        **Example request**
+        **Example request**:
+
         .. sourcecode:: http
 
            GET /api/localhost/harddisk
            Host: localhost:5000
            Accept: application/json
 
-        **Example response**
+        **Example response**:
+
         .. sourcecode:: http
 
            HTTP/1.0 200 OK
@@ -54,7 +56,7 @@ def show_harddisk_usage(hostname):
                }
               ]
             }
-        "
+
         :param hostname: hostname of the machine
         :type post_id: string
         :reqheader Accept: application/json
