@@ -15,10 +15,10 @@ from servmon import app
 def get_db():
     client = getattr(g, '_mongo_client', None)
     if client is None:
-        client = connect_to_client()
+        g._mongo_client = client = connect_to_client()
         # TODO: Change db name to environmental variable
-        db = client['test_database']
 
+    db = client['test_database']
     return db
 
 
@@ -27,6 +27,9 @@ def teardown_db(exception):
     client = getattr(g, '_mongo_client', None)
     if client is not None:
         client.close()
+
+        # Clear g._mongo_client
+        g._mongo_client = None
 
 
 def connect_to_client():
