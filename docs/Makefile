@@ -14,12 +14,15 @@ help:
 
 .PHONY: help Makefile
 
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
+# DO NOT RUN THIS COMMAND UNLESS ABSOLUTELY NECESSARY, IT WILL ERASE ALL CHANGES
+# OF RST FILES
+rst:
 	# Remove old common.rst
-	rm common.rst
+	rm -f common.rst
 	# Build API docs for common module
 	sphinx-apidoc -o . ../servmon/common
 	# Build the entire document
+
+html:
+	# Build the document only
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
