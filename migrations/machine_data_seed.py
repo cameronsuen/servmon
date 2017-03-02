@@ -14,16 +14,57 @@ def up():
     # Select which collection to use, each collection stores data of one machine
     collection = db.localhost_states
 
+    # Remove the old collection
+    collection.remove({})
+
     # Set up the data
     sample_machine_state = {
-        'seeded': True,
-        'metric': 'harddisk',
-        'used': 200,
-        'total': 1000,
-        'partitions': [{'filesystem': '/dev/sda1', 'mountpoint': '/',
-                        'used': 100, 'subtotal': 500},
-                       {'filesystem': '/dev/sda2', 'mountpoint': '/var',
-                        'used': 100, 'subtotal': 500}]
+        'hostname': 'localhost',
+        'status': True,
+        'data': {
+            'cpu': '20%',
+            'cpuData': {
+                'cores': [{
+                    'name': 'Core 1',
+                    'usage': '20%',
+                    'frequency': '2000MHz',
+                },
+                {
+                    'name': 'Core 2',
+                    'usage': '30%',
+                    'frequency': '2000MHz'
+                }]
+            },
+            'storage': '80%',
+            'storageData': {
+                'storagePartitions': [{
+                    'name': 'Partition',
+                    'filesystem': '/dev/sda1',
+                    'mountPt': '/',
+                    'storage': '600GB/1000GB'
+                }]
+            },
+            'ram': '65%',
+            'ramData': {
+                'totalMemory': '3.90GB/16.00GB',
+                'buffers': '9GB',
+                'swapUsage': '1GB/16GB'
+            },
+            'process': True,
+            'processData': {
+                'processes': [{
+                    'name': 'Process A',
+                    'status': True,
+                    'PID': 123456,
+                    'UID': '0(root)/1(daemon)',
+                    'GUID': '3(user)/3(sys)',
+                    'CPUOccupeid': '15%',
+                    'RAMOccupied': '900MB/7%'
+                }]
+            }
+
+        },
+        'seeded': True
     }
 
     # Actual insertion of data
