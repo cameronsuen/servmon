@@ -26,7 +26,36 @@ def up():
         'data': {
             'cpu': '20%',
             'cpuData': {
-                'cores': [{
+                'histRec': [
+                    {
+                        'label': '01:00',
+                        'value': '15%'
+                    },
+                    {
+                        'label': '02:00',
+                        'value': '14%'
+                    },
+                    {
+                        'label': '03:00',
+                        'value': '23%'
+                    },
+                    {
+                        'label': '04:00',
+                        'value': '91%'
+                    },
+                    {
+                        'label': '05:00',
+                        'value': '55%'
+                    },
+                    {
+                        'label': '06:00',
+                        'value': '83%'
+                    },
+                    {
+                        'label': '07:00',
+                        'value': '19%'
+                    },
+                ], 'cores': [{
                     'name': 'Core 1',
                     'usage': '20%',
                     'frequency': '2000MHz',
@@ -50,18 +79,48 @@ def up():
             'ramData': {
                 'totalMemory': '3.90GB/16.00GB',
                 'buffers': '9GB',
-                'swapUsage': '1GB/16GB'
+                'swapUsage': '1GB/16GB',
+                'histRec': [
+                    {
+                        'label': '01:00',
+                        'value': '15%'
+                    },
+                    {
+                        'label': '02:00',
+                        'value': '14%'
+                    },
+                    {
+                        'label': '03:00',
+                        'value': '23%'
+                    },
+                    {
+                        'label': '04:00',
+                        'value': '91%'
+                    },
+                    {
+                        'label': '05:00',
+                        'value': '55%'
+                    },
+                    {
+                        'label': '06:00',
+                        'value': '83%'
+                    },
+                    {
+                        'label': '07:00',
+                        'value': '19%'
+                    },
+                ]
             },
             'process': True,
             'processData': {
                 'processes': [{
                     'name': 'Process A',
                     'status': True,
-                    'PID': 123456,
-                    'UID': '0(root)/1(daemon)',
-                    'GUID': '3(user)/3(sys)',
-                    'CPUOccupeid': '15%',
-                    'RAMOccupied': '900MB/7%'
+                    'pid': '123456',
+                    'uid': '0(root)/1(daemon)',
+                    'guid': '3(user)/3(sys)',
+                    'cpuOccupied': '15%',
+                    'ramOccupied': '900MB/7%'
                 }]
             }
 
@@ -75,7 +134,36 @@ def up():
         'data': {
             'cpu': '20%',
             'cpuData': {
-                'cores': [{
+                'histRec': [
+                    {
+                        'label': '01:00',
+                        'value': '15%'
+                    },
+                    {
+                        'label': '02:00',
+                        'value': '14%'
+                    },
+                    {
+                        'label': '03:00',
+                        'value': '23%'
+                    },
+                    {
+                        'label': '04:00',
+                        'value': '91%'
+                    },
+                    {
+                        'label': '05:00',
+                        'value': '55%'
+                    },
+                    {
+                        'label': '06:00',
+                        'value': '83%'
+                    },
+                    {
+                        'label': '07:00',
+                        'value': '19%'
+                    },
+                ], 'cores': [{
                     'name': 'Core 1',
                     'usage': '40%',
                     'frequency': '2000MHz',
@@ -99,18 +187,48 @@ def up():
             'ramData': {
                 'totalMemory': '3.90GB/16.00GB',
                 'buffers': '9GB',
-                'swapUsage': '1GB/16GB'
+                'swapUsage': '1GB/16GB',
+                'histRec': [
+                    {
+                        'label': '01:00',
+                        'value': '15%'
+                    },
+                    {
+                        'label': '02:00',
+                        'value': '14%'
+                    },
+                    {
+                        'label': '03:00',
+                        'value': '23%'
+                    },
+                    {
+                        'label': '04:00',
+                        'value': '91%'
+                    },
+                    {
+                        'label': '05:00',
+                        'value': '55%'
+                    },
+                    {
+                        'label': '06:00',
+                        'value': '83%'
+                    },
+                    {
+                        'label': '07:00',
+                        'value': '19%'
+                    },
+                ]
             },
             'process': True,
             'processData': {
                 'processes': [{
                     'name': 'Process A',
                     'status': True,
-                    'PID': 123456,
-                    'UID': '0(root)/1(daemon)',
-                    'GUID': '3(user)/3(sys)',
-                    'CPUOccupeid': '15%',
-                    'RAMOccupied': '900MB/7%'
+                    'pid': '123457',
+                    'uid': '0(root)/1(daemon)',
+                    'guid': '3(user)/3(sys)',
+                    'cpuOccupied': '15%',
+                    'ramOccupied': '900MB/7%'
                 }]
             }
 
