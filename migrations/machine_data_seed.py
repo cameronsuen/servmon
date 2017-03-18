@@ -12,19 +12,50 @@ def up():
     # Select which database to use
     db = client.test_database
     # Select which collection to use, each collection stores data of one machine
-    collection = db.localhost_states
+    collection = db.machine_states
 
     # Remove the old collection
     collection.remove({})
 
+    sample_machine_states = list()
+
     # Set up the data
-    sample_machine_state = {
+    sample_machine_states.append({
         'hostname': 'localhost',
         'status': True,
         'data': {
             'cpu': '20%',
             'cpuData': {
-                'cores': [{
+                'histRec': [
+                    {
+                        'label': '01:00',
+                        'value': '15%'
+                    },
+                    {
+                        'label': '02:00',
+                        'value': '14%'
+                    },
+                    {
+                        'label': '03:00',
+                        'value': '23%'
+                    },
+                    {
+                        'label': '04:00',
+                        'value': '91%'
+                    },
+                    {
+                        'label': '05:00',
+                        'value': '55%'
+                    },
+                    {
+                        'label': '06:00',
+                        'value': '83%'
+                    },
+                    {
+                        'label': '07:00',
+                        'value': '19%'
+                    },
+                ], 'cores': [{
                     'name': 'Core 1',
                     'usage': '20%',
                     'frequency': '2000MHz',
@@ -48,27 +79,165 @@ def up():
             'ramData': {
                 'totalMemory': '3.90GB/16.00GB',
                 'buffers': '9GB',
-                'swapUsage': '1GB/16GB'
+                'swapUsage': '1GB/16GB',
+                'histRec': [
+                    {
+                        'label': '01:00',
+                        'value': '15%'
+                    },
+                    {
+                        'label': '02:00',
+                        'value': '14%'
+                    },
+                    {
+                        'label': '03:00',
+                        'value': '23%'
+                    },
+                    {
+                        'label': '04:00',
+                        'value': '91%'
+                    },
+                    {
+                        'label': '05:00',
+                        'value': '55%'
+                    },
+                    {
+                        'label': '06:00',
+                        'value': '83%'
+                    },
+                    {
+                        'label': '07:00',
+                        'value': '19%'
+                    },
+                ]
             },
             'process': True,
             'processData': {
                 'processes': [{
                     'name': 'Process A',
                     'status': True,
-                    'PID': 123456,
-                    'UID': '0(root)/1(daemon)',
-                    'GUID': '3(user)/3(sys)',
-                    'CPUOccupeid': '15%',
-                    'RAMOccupied': '900MB/7%'
+                    'pid': '123456',
+                    'uid': '0(root)/1(daemon)',
+                    'guid': '3(user)/3(sys)',
+                    'cpuOccupied': '15%',
+                    'ramOccupied': '900MB/7%'
                 }]
             }
 
         },
         'seeded': True
-    }
+    })
+
+    sample_machine_states.append({
+        'hostname': 'sample-domain',
+        'status': True,
+        'data': {
+            'cpu': '20%',
+            'cpuData': {
+                'histRec': [
+                    {
+                        'label': '01:00',
+                        'value': '15%'
+                    },
+                    {
+                        'label': '02:00',
+                        'value': '14%'
+                    },
+                    {
+                        'label': '03:00',
+                        'value': '23%'
+                    },
+                    {
+                        'label': '04:00',
+                        'value': '91%'
+                    },
+                    {
+                        'label': '05:00',
+                        'value': '55%'
+                    },
+                    {
+                        'label': '06:00',
+                        'value': '83%'
+                    },
+                    {
+                        'label': '07:00',
+                        'value': '19%'
+                    },
+                ], 'cores': [{
+                    'name': 'Core 1',
+                    'usage': '40%',
+                    'frequency': '2000MHz',
+                },
+                {
+                    'name': 'Core 2',
+                    'usage': '50%',
+                    'frequency': '2000MHz'
+                }]
+            },
+            'storage': '80%',
+            'storageData': {
+                'storagePartitions': [{
+                    'name': 'Partition',
+                    'filesystem': '/dev/sda1',
+                    'mountPt': '/',
+                    'storage': '600GB/1000GB'
+                }]
+            },
+            'ram': '65%',
+            'ramData': {
+                'totalMemory': '3.90GB/16.00GB',
+                'buffers': '9GB',
+                'swapUsage': '1GB/16GB',
+                'histRec': [
+                    {
+                        'label': '01:00',
+                        'value': '15%'
+                    },
+                    {
+                        'label': '02:00',
+                        'value': '14%'
+                    },
+                    {
+                        'label': '03:00',
+                        'value': '23%'
+                    },
+                    {
+                        'label': '04:00',
+                        'value': '91%'
+                    },
+                    {
+                        'label': '05:00',
+                        'value': '55%'
+                    },
+                    {
+                        'label': '06:00',
+                        'value': '83%'
+                    },
+                    {
+                        'label': '07:00',
+                        'value': '19%'
+                    },
+                ]
+            },
+            'process': True,
+            'processData': {
+                'processes': [{
+                    'name': 'Process A',
+                    'status': True,
+                    'pid': '123457',
+                    'uid': '0(root)/1(daemon)',
+                    'guid': '3(user)/3(sys)',
+                    'cpuOccupied': '15%',
+                    'ramOccupied': '900MB/7%'
+                }]
+            }
+
+        },
+        'seeded': True
+    })
 
     # Actual insertion of data
-    collection.insert_one(sample_machine_state)
+    collection.insert_many(sample_machine_states);
 
 
 def down():
