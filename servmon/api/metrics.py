@@ -30,7 +30,7 @@ def get_metrics():
 
         .. sourcecode:: http
 
-            GET /api/metrics?hostname=localhost&detailMetric=harddisk&detailMetric=cpu&detailMetric=ram&detailMetric=process
+            GET /api/metrics?hostname=localhost&detailMetric=harddisk&detailMetric=cpu&detailMetric=ram&detailMetric=process&pid=12345
             Host: localhost:5000
             Accept: application/json
 
@@ -38,7 +38,7 @@ def get_metrics():
 
         .. sourcecode:: http
 
-           HTTP/1.0 200 OK
+           HTTP/1.1 200 OK
            Content-Type: application/json
 
            {
