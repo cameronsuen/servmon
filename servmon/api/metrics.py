@@ -158,7 +158,7 @@ def get_metrics():
     if len(result) == 0:
         # error message, status code, OPTIONAL payload to illustrate error
         raise invalid_usage.InvalidUsage('No data found', 404,
-                                         {'action': 'Please specify correct hostname, '})
+                                         {'action': 'Please specify correct hostname'})
 
     # Returns the result
     return jsonify(result)
